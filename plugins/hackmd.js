@@ -38,7 +38,7 @@ class Hackmd {
   async hasNextSlide() {    
     let cantgodown = await this.page.$eval('.navigate-down', ({ disabled }) => disabled);
     await this.page.keyboard.press(cantgodown ? 'ArrowRight' : 'ArrowDown');
-    await pause(1000);
+    await pause(500);
     return this.isNextSlideDetected;
   }
 
